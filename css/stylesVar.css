@@ -62,18 +62,18 @@ header * {
     gap: var(--spacing-1em);
 }
 .logo {
-    width: 7vw;
-    height: 7vw;
+    width: clamp(5em, 7vw, 100em); 
+    height: clamp(5em, 7vw, 100em);
     border-radius: 10px;
 }
 .left h1 {
-    font-size: 1.3vw; 
+    font-size: clamp(1em, 1.3vw, 100em); 
 }
 .left span {
     color: var(--white-opacity);
 }
 .header-h2 {
-    font-size: 3.8vw;
+    font-size: clamp(1.5em, 3.8vw, 100em);
     text-transform: uppercase;
     font-weight: 300;
     text-align: center;
@@ -88,7 +88,7 @@ header * {
 .header-btn a {
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 1.1vw;
+    font-size: clamp(0.5em, 1.1vw, 100em);
     letter-spacing: 0.2em;
     padding: 0.8em 4.5em;
     border: 2px solid var(--white);
@@ -169,7 +169,7 @@ header * {
 
 main {
     text-align: center;
-    margin: 7em clamp(5vw, 20%, 28em);
+    margin: 7em clamp(3rem, 20vw, 200em);
 }
 
 main .fa-solid {
@@ -184,7 +184,7 @@ main .fa-solid {
 }
 
 .about p {
-    font-size: 1.4vw;
+    font-size: clamp(0.8rem, 1.4vw, 2rem);
     line-height: 1.5em;
 }
 
@@ -192,13 +192,13 @@ main .fa-solid {
     display: flex;
     justify-content: center;
     gap: var(--spacing-4em);
-    font-size: 1.2vw;
+    font-size: clamp(0.3rem, 1.2vw, 2rem);
 }
 
 /*---------------------------------COLABS*/
 
 .colabs h2 {
-    font-size: 2.5vw;
+    font-size: clamp(1rem, 2.5vw, 200rem);
     font-weight: 300;
     text-transform: uppercase;
     text-decoration: underline 1.5px rgba(0, 0, 0, 0.247);
@@ -207,21 +207,21 @@ main .fa-solid {
 }
 
 .colabs h3 {
-    font-size: 1.5vw;
+    font-size: clamp(0.6rem, 1.5vw, 2rem);
     font-weight: 300;
     margin-top: 0;
     text-transform: uppercase;
 }
 
 .colabs p {
-    font-size: 1vw;
+    font-size: clamp(0.5rem, 1vw, 2rem);
     line-height: 1.3em;
 }
 
 .colabs-container {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-4em);
+    gap: clamp(0.5rem, 4vw, 200em);
 }
 .colabs-container i {
     font-size: 2vw;
@@ -288,5 +288,10 @@ footer {
     }
     .menu-btn {
        display: none;
+    }
+}
+@media (max-width: 550px) {
+    main {
+        margin: 2rem;
     }
 }

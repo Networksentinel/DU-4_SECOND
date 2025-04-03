@@ -1,0 +1,297 @@
+/*----------------------------------CSS VARIABLES----------------------------------*/
+
+:root {
+    /* Colors */
+    --primary-red: #f92445;
+    --primary-red-opacity: #f92445b3;
+    --white: #ffffff;
+    --black: #000000;
+    --black-opacity: #000000ab;
+    --aliceblue: aliceblue;
+    --white-opacity: #ffffff80;
+
+    /* Font Sizes */
+    --font-size-header: 1.5em;
+    --font-size-nav-link: 1em;
+    --font-size-icon: 1.4em;
+    --font-size-large-header: 4em;
+
+    /* Spacing */
+    --spacing-1em: 1em;
+    --spacing-3em: 3em;
+    --spacing-4em: 4em;
+}
+
+/*--------------------------------GLOBAL RESET--------------------------------*/
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background-color: var(--aliceblue);
+    color: var(--black-opacity);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--black);
+}
+
+/*---------------------------------HEADER STYLES--------------------------------*/
+
+header {
+    width: 100%;
+    background: url(../img/cover.jpg) no-repeat center center/cover;
+}
+header * {
+    color: var(--white);
+    background-color: transparent;
+}
+
+.top-bar {
+    width: 100%;
+    padding: var(--spacing-1em) var(--spacing-3em) 0 var(--spacing-1em);
+    display: flex;
+    justify-content: space-between;
+}
+.left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1em);
+}
+.logo {
+    width: clamp(5em, 7vw, 100em); 
+    height: clamp(5em, 7vw, 100em);
+    border-radius: 10px;
+}
+.left h1 {
+    font-size: clamp(1em, 1.3vw, 100em); 
+}
+.left span {
+    color: var(--white-opacity);
+}
+.header-h2 {
+    font-size: clamp(1.5em, 3.8vw, 100em);
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    padding-top: 3em;
+}
+
+.header-btn {
+    text-align: center;
+    padding-bottom: 10em;
+    padding-top: 1em;
+}
+.header-btn a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: clamp(0.5em, 1.1vw, 100em);
+    letter-spacing: 0.2em;
+    padding: 0.8em 4.5em;
+    border: 2px solid var(--white);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.header-btn a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(249,36,69,1) 0%, rgba(255,255,255,0.70) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.header-btn a:hover::before {
+    opacity: 1;
+}
+
+/*---------------------------------NAVIGATION*/
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 5em;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 6em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav ul a {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: clamp(0.5rem, 1.1vw, 2rem);
+    transition: all 0.2s ease-in-out;
+}
+
+.main-nav ul a:hover {
+    color: var(--primary-red-opacity);
+}
+
+/*---------------------------------NAVIGATION BUTTON*/
+
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    width: 3.75em;
+    height: 2.5em;
+    border: none;
+    cursor: pointer;
+}
+.fa-solid {
+    font-size: 2.5em;
+    font-weight: 900;
+    transition: all 0.2s ease-in-out;
+}
+
+.fa-solid:hover {
+    color: var(--primary-red-opacity);
+}
+
+/*---------------------------------MAIN STYLES--------------------------------*/
+
+main {
+    text-align: center;
+    margin: 7em clamp(3rem, 20vw, 200em);
+}
+
+main .fa-solid {
+    color: var(--primary-red-opacity);
+    padding-bottom: 0.5em;
+}
+
+/*---------------------------------ABOUT*/
+
+.about {
+    padding-bottom: 3em;
+}
+
+.about p {
+    font-size: clamp(0.8rem, 1.4vw, 2rem);
+    line-height: 1.5em;
+}
+
+.about-icons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-4em);
+    font-size: clamp(0.3rem, 1.2vw, 2rem);
+}
+
+/*---------------------------------COLABS*/
+
+.colabs h2 {
+    font-size: clamp(1rem, 2.5vw, 200rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: underline 1.5px rgba(0, 0, 0, 0.247);
+    text-underline-offset: .4em;
+    padding-bottom: 1em;
+}
+
+.colabs h3 {
+    font-size: clamp(0.6rem, 1.5vw, 2rem);
+    font-weight: 300;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.colabs p {
+    font-size: clamp(0.5rem, 1vw, 2rem);
+    line-height: 1.3em;
+}
+
+.colabs-container {
+    display: flex;
+    justify-content: center;
+    gap: clamp(0.5rem, 4vw, 200em);
+}
+.colabs-container i {
+    font-size: 2vw;
+}
+
+.colabs-one {
+    width: 50%;
+}
+
+.colabs-two {
+    width: 50%;
+}
+
+.fa-lightbulb, .fa-briefcase {
+    padding-top: 1em;
+}
+
+/*---------------------------------FOOTER STYLES--------------------------------*/
+
+footer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: center;
+    padding: 2em 0;
+    background-color: whitesmoke;
+}
+
+/*---------------------------------SOCIALS*/
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+}
+
+.socials a {
+    font-size: 2vw;
+    color: var(--primary-red-opacity);
+    transition: all 0.3s ease-in-out;
+}
+
+.socials a:hover {
+    color: var(--primary-red);
+}
+
+/*---------------------------------COPYRIGHTS*/
+
+.copy p {
+    color: var(--primary-red-opacity);
+    font-size: 0.9vw;
+}
+
+
+/*---------------------------------RESPONSIVITY--------------------------------*/
+
+
+@media (max-width: 1230px) {
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.5vw;
+        text-align: center;
+    }
+    .menu-btn {
+       display: none;
+    }
+}
+@media (max-width: 550px) {
+    main {
+        margin: 2rem;
+    }
+}
